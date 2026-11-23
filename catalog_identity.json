@@ -1,0 +1,46 @@
+{
+  "format_version": 1,
+  "game": {
+    "name": "Lucky Luke",
+    "id": "SLUS-00719",
+    "boot_exe": "SLUS_007.19"
+  },
+  "marketing": {
+    "description": "",
+    "publisher": "",
+    "year": "",
+    "region": "USA",
+    "players": 1
+  },
+  "rom_identity": {
+    "cue_name": "Lucky Luke (USA).cue",
+    "bin_name": "Lucky Luke (USA) (Track 1).bin",
+    "track_counts": [
+      21
+    ],
+    "require_cue": true,
+    "data_track": {
+      "size": 159293904,
+      "md5": "c01ba9782d6719b1218e3c20b3f738ed",
+      "sha1": "789a33bbc296c0342f30fbbd68cceb2194a1642d",
+      "crc32": "de69e1b8"
+    },
+    "disc_fp": "17f24688891cd3854382957a38dddc2bbfc2d1659aa625f9d36d3128943888e8"
+  },
+  "exe": {
+    "load_address": "0x80010000",
+    "entry_pc": "0x8006B3F0",
+    "text_size": "0x00089000",
+    "stack_base": "0x801FFFF0"
+  },
+  "seeds": {
+    "count": 1317,
+    "source": "boot_exe_jal"
+  },
+  "warnings": [],
+  "notes": [
+    "entry_pc/load_address/text_size/stack_base taken from PS-X EXE header.",
+    "seeds are first-pass boot-EXE JAL targets (+ entry); expect to grow as overlays / runtime paths are discovered.",
+    "required_disc_fp is psxrecomp-toc-v1 (matches runtime DiscIdentity)."
+  ]
+}

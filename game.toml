@@ -1,0 +1,59 @@
+# Autofilled by tools/new_project_layout/probe_disc.py from your legal dump.
+# Review before shipping. Runtime quirks / overlay seeds still need hand work.
+
+[game]
+name = "Lucky Luke"
+id = "SLUS-00719"
+players = 1
+exe = "disc/SLUS_007.19"
+disc = "disc/Lucky Luke (USA).cue"
+discs = ["disc/Lucky Luke (USA).cue"]
+disc_serials = ["SLUS-00719"]
+load_address = "0x80010000"
+entry_pc = "0x8006B3F0"
+text_size = "0x00089000"
+stack_base = "0x801FFFF0"
+
+# Digests are for data Track 01 (first BINARY FILE / TRACK 01).
+[prepare_disc]
+out_dir = "disc"
+bin_name = "Lucky Luke (USA) (Track 1).bin"
+cue_name = "Lucky Luke (USA).cue"
+boot_exe = "SLUS_007.19"
+known_sizes = [159293904]
+known_md5 = [
+  "c01ba9782d6719b1218e3c20b3f738ed",
+]
+known_sha1 = [
+  "789a33bbc296c0342f30fbbd68cceb2194a1642d",
+]
+known_crc32 = [
+  "de69e1b8",
+]
+
+[recompiler]
+bios_config = "psxrecomp/bios/SCPH1001.toml"
+seeds = "seeds/ghidra_funcs.txt"
+out_dir = "generated"
+strict = true
+
+[runtime]
+openbios = false
+bios_hle = false
+window_title = "Lucky Luke Recompiled"
+memcard_dir = "saves"
+overlay_cache = true
+
+[video]
+renderer = "opengl"
+aspect_ratio = "4:3"
+
+[controller]
+default_mode = "digital"
+
+# Online mount gate: digests + track count + optional TOC fingerprint
+# (see docs/NETPLAY.md).
+[netplay]
+require_cue = true
+required_tracks = 21
+required_disc_fp = "17f24688891cd3854382957a38dddc2bbfc2d1659aa625f9d36d3128943888e8"

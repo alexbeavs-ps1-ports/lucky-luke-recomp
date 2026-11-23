@@ -1,0 +1,98 @@
+{
+  "format_version": 1,
+  "id": "lucky-luke-psx",
+  "name": "Lucky Luke",
+  "kind": "recomp",
+  "platform": "psx",
+  "source_repo": "lucky-luke-recomp",
+  "rom_identity": {
+    "crc32": [
+      "de69e1b8"
+    ],
+    "md5": [
+      "c01ba9782d6719b1218e3c20b3f738ed"
+    ],
+    "sha1": [
+      "789a33bbc296c0342f30fbbd68cceb2194a1642d"
+    ],
+    "disc_serials": [
+      "SLUS-00719"
+    ],
+    "sizes": [
+      159293904
+    ],
+    "filenames": [
+      "Lucky Luke (USA).cue",
+      "Lucky Luke (USA) (Track 1).bin"
+    ],
+    "track_counts": [
+      21
+    ],
+    "disc_fps": [
+      "17f24688891cd3854382957a38dddc2bbfc2d1659aa625f9d36d3128943888e8"
+    ],
+    "require_cue": true
+  },
+  "rom_extensions": [
+    ".cue",
+    ".bin",
+    ".chd"
+  ],
+  "bios_identity": {
+    "required": true,
+    "name": "SCPH1001.BIN",
+    "profile": "SCPH1001",
+    "crc32": [
+      "37157331"
+    ],
+    "md5": [
+      "924e392ed05558ffdb115408c263dccf"
+    ],
+    "sha1": [
+      "10155d8d6e6e832d6ea66db9bc098321fb5e8ebf"
+    ],
+    "sha256": [
+      "71af94d1e47a68c11e8fdb9f8368040601514a42a5a399cda48c7d3bff1e99d3"
+    ],
+    "sizes": [
+      524288
+    ],
+    "filenames": [
+      "SCPH1001.BIN"
+    ]
+  },
+  "release": {
+    "github": "alexbeavs-ps1-ports/lucky-luke-recomp",
+    "allow_prerelease": false,
+    "asset_glob": {
+      "windows-x64": "lucky-luke-*-windows-x64.zip",
+      "linux-x64": "lucky-luke-*-linux-x64.zip",
+      "macos-arm64": "lucky-luke-*-macos-arm64.zip",
+      "macos-x64": "lucky-luke-*-macos-x64.zip"
+    }
+  },
+  "launch": {
+    "windows": "lucky_luke.exe",
+    "linux": "lucky_luke",
+    "macos": "lucky_luke"
+  },
+  "build": {
+    "source": {
+      "github": "alexbeavs-ps1-ports/lucky-luke-recomp",
+      "ref": ""
+    },
+    "toolchain": {
+      "id": "cmake-clang-v1",
+      "min_version": "1.0.14"
+    },
+    "generate": {
+      "engine": "psxrecomp",
+      "config": "game.toml"
+    },
+    "cmake": {
+      "build_dir": "build",
+      "target": "psx-runtime",
+      "config": "Release"
+    }
+  }
+}
